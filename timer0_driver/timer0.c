@@ -39,4 +39,3 @@ ISR(TIMER0_COMPA_vect)
 	// Inkrementovanje broja milisekundi koje su prosle od pokretanja aplikacije
 	ms++;
 }
-

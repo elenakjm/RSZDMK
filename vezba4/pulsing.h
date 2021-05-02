@@ -9,7 +9,7 @@
 #define PULSING_H_
 
 #include "../pin_driver/pin.h"
-#include"timer0.h"
+#include"../timer0_driver/timer0.h"
 #include "utils.h"
 
 #define DIODE_PIN 5
