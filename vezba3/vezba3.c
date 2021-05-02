@@ -17,6 +17,9 @@ void pinSetValue(unsigned char port, unsigned char pin, unsigned char value);
 void pinInit(unsigned char port, unsigned char pin, unsigned char direction);
 unsigned long timer0DelayMs(unsigned long delay_length);
 void timer0InteruptInit();
+unsigned long calculateHalfPeriod(unsigned long period);
+void pinPulsing(unsigned char port, unsigned char pin, unsigned long period, unsigned char num_of_repetitions);
+
 
 int main()
 {
@@ -43,10 +46,10 @@ void pinPulse(unsigned char port, unsigned char pin, unsigned long period)
 {
 	// Poluperioda u kojoj pin ima visoku vrednost
 	pinSetValue(port, pin, HIGH);
-	timer0DelayMs(period/2);
+	timer0DelayMs(calculateHalfPeriod(period));
 	// Poluperioda u kojoj pin ima nisku vrednost
 	pinSetValue(port, pin, LOW);
-	timer0DelayMs(period/2);
+	timer0DelayMs(calculateHalfPeriod(period));
 }
 /******************************************************************************************/
 void pinSetValue(unsigned char port, unsigned char pin, unsigned char value)
@@ -128,4 +131,22 @@ ISR(TIMER0_COMPA_vect)
 {
 	// Inkrementovanje broja milisekundi koje su prosle od pokretanja aplikacije
 	ms++;
+}
+
+unsigned long calculateHalfPeriod(unsigned long period)
+{
+	return period=period/2;
+}
+
+void pinPulsing(unsigned char port, unsigned char pin, unsigned long period, unsigned char num_of_repetitions)
+{
+	int i;
+	for(i=0; i<num_of_repetitions; i++)
+	{
+		pinSetValue(port, pin, HIGH);
+		timer0DelayMs(calculateHalfPeriod(period));
+
+		pinSetValue(port, pin, LOW);
+		timer0DelayMs(calculateHalfPeriod(period));
+	}
 }

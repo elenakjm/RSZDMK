@@ -1,8 +1,8 @@
-/*
- * blink.c
- *
- *  Created on: 02.05.2021.
- *      Author: elena
- */
+#include <avr/io.h>
+#include <util/delay.h>
 
+int main()
+{
 
+	return 0;
+}
