@@ -9,10 +9,6 @@
 #include "adc_utils.h"
 #include <avr/io.h>
 
-#define SINGLE 6 //sesti bit ADCSRA
-#define FREE_RUNNING 5 //peti bit ADCSRA
-
-unsigned char n;
 
 /**- Opis: vrši inicijalizaciju AD konvertora na osnovu prosleðenih parametara
 (referentni napon i faktor skaliranja).
@@ -22,12 +18,7 @@ void InitADC(unsigned char reference, unsigned char division_factor)
 {
 	SetVref(reference);
 	SetPrescaler(division_factor);
-	n = SINGLE;
-/** Nisam razumela ovaj deo sa biranjem konverzije, zato sam u f-ju RunConversation
- * dodala parametar n koji se prosledjuje i od kojeg zavisi vrsta konverzije
- */
 	SetEnable(1);
-
 }
 
 
@@ -37,7 +28,7 @@ void InitADC(unsigned char reference, unsigned char division_factor)
 unsigned int ReadADC(unsigned char channel)
 {
 	SetChannel(channel);
-	RunConversion(n);
+	RunConversion();
 	while(CheckBit(ADCSRA, 4)!=1)
 		;
 	if(CheckBit(ADMUX, 5) == 0) //check za ADLAR bit
@@ -150,8 +141,8 @@ void SetChannel(unsigned char channel)
 /**- Opis: implementira izvršavanje AD konverzije, odnosno njeno pokretanje i èekanje
 na njen završetak.
 - Povratna vrednost: nema povratnu vrednost*/
-void RunConversion(unsigned char n) //u f-ji InitADC stoji objasnjenje za dodatni parametar
+void RunConversion()
 {
-	SetBit(ADCSRA, n); //ako je 6, bice single conv, ako je 5 bice free running
+	SetBit(ADCSRA, 6);
 }
 

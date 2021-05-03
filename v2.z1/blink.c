@@ -1,5 +1,6 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include "../timer0_driver/timer0.h"
 
 int main()
 {
@@ -20,5 +21,6 @@ void branch_a()
 
 void branch_b()
 {
-	TCCR0A
+
 }
+

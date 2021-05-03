@@ -1,7 +1,7 @@
 #include "../usart/usart.h"
 #include <avr/io.h>
 #include <stdio.h>
-#include <utils/delay.h>
+#include <util/delay.h>
 
 int main()
 {

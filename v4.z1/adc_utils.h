@@ -48,7 +48,7 @@ void SetChannel(unsigned char channel);
 /**- Opis: implementira izvršavanje AD konverzije, odnosno njeno pokretanje i èekanje
 na njen završetak.
 - Povratna vrednost: nema povratnu vrednost*/
-void RunConversion(unsigned char n);
+void RunConversion();
 
 
 #endif /* ADC_UTILS_H_ */
