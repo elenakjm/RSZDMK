@@ -40,7 +40,7 @@ int main()
 		_delay_ms(100);
 
 		usartGetString(unos);
-		broj = atoi(unos);
+		sscanf(unos, "%d", &broj);
 		sprintf(pom, "Konvertovano: %d\r\n", broj);
 		usartPutString(pom);
 
