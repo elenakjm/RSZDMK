@@ -6,7 +6,6 @@
 #include "../usart/usart.h"
 #include<avr/pgmspace.h> //za PSTR
 #include<stdlib.h>
-#include<stdio.h>
 #include<util/delay.h>
 
 
@@ -74,7 +73,6 @@ int main()
 	usartInit(9600);
 	char unos[64];
 	int8_t duzina = 0;
-	char pom[64]; //pomocni string
 
 	while(1)
 	{
@@ -83,7 +81,6 @@ int main()
 		_delay_ms(100);
 
 		duzina = usartGetString(unos);
-		strcpy(pom, unos);
 
 		capitalise(unos, duzina);
 		removeBlank(unos, duzina);
