@@ -1,4 +1,4 @@
-/*
+/**
  * @file main.c
  * @brief Zadatak koji implementira logovanje
  * @author elena

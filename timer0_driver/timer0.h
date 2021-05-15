@@ -1,4 +1,4 @@
-/*
+/**
  * @file timer0.h
  * @brief Tajmer
  */

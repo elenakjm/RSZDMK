@@ -66,13 +66,7 @@ $(function() {
 <div class="title">morse.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * @file morse.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * @brief Biblioteka koja realizuje morzeov kod</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * @date 13-05-2021</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * @author elena</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<a href="morse_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef MORSE_H_</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define MORSE_H_</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
@@ -85,7 +79,7 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include&lt;string.h&gt;</span> <span class="comment">//za strlen</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;timer0.h&quot;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define HIGH 1</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="morse_8h.html#a5bb885982ff66a2e0a0a45a8ee9c35e2">   21</a></span>&#160;<span class="preprocessor">#define HIGH 1</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define LOW 0</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#define OUTPUT 1</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define INPUT 0</span></div>
@@ -94,22 +88,29 @@ $(function() {
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define PORT_D 2</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#define DIODE_PIN 5</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">void</span> pinSetValue(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> port, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> pin, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> value);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">void</span> <a class="code" href="morse_8h.html#a2a16b0b96e2105acbc86920c802fe0c6">pinSetValue</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> port, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> pin, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> value);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">void</span> pinInit(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> port, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> pin, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> direction);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">void</span> <a class="code" href="morse_8h.html#a77aa088e614a56bcb99fce9ed3b844e9">pinInit</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> port, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> pin, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> direction);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;int8_t letter_num(<span class="keywordtype">char</span> x);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;int8_t <a class="code" href="morse_8h.html#ab022985d803fa4c169762cb970a1a7db">letter_num</a>(<span class="keywordtype">char</span> x);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keywordtype">void</span> glavni(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> port, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> pin, <span class="keywordtype">char</span> unos[]);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keywordtype">void</span> <a class="code" href="morse_8h.html#a427ce3660862f0a5a3096a3923e4765e">glavni</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> port, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> pin, <span class="keywordtype">char</span> unos[]);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keywordtype">void</span> blink(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> port, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> pin, int8_t value);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keywordtype">void</span> <a class="code" href="morse_8h.html#a9eed16bff2246d94ff82e13febdcca14">blink</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> port, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> pin, int8_t value);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;int8_t get_bit(int64_t letter, int8_t pozicija);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;int8_t <a class="code" href="morse_8h.html#a8e73ad15b1781ea98139f042d5ae3d06">get_bit</a>(int64_t letter, int8_t pozicija);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keywordtype">void</span> pulsing(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> port, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> pin, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> value, int8_t repetition);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keywordtype">void</span> <a class="code" href="morse_8h.html#a28e86b1559044e74b215e4bf8f422784">pulsing</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> port, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> pin, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> value, int8_t repetition);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* MORSE_H_ */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="amorse_8h_html_a8e73ad15b1781ea98139f042d5ae3d06"><div class="ttname"><a href="morse_8h.html#a8e73ad15b1781ea98139f042d5ae3d06">get_bit</a></div><div class="ttdeci">int8_t get_bit(int64_t letter, int8_t pozicija)</div><div class="ttdef"><b>Definition:</b> morse.c:164</div></div>
+<div class="ttc" id="amorse_8h_html_a77aa088e614a56bcb99fce9ed3b844e9"><div class="ttname"><a href="morse_8h.html#a77aa088e614a56bcb99fce9ed3b844e9">pinInit</a></div><div class="ttdeci">void pinInit(unsigned char port, unsigned char pin, unsigned char direction)</div><div class="ttdef"><b>Definition:</b> morse.c:59</div></div>
+<div class="ttc" id="amorse_8h_html_a2a16b0b96e2105acbc86920c802fe0c6"><div class="ttname"><a href="morse_8h.html#a2a16b0b96e2105acbc86920c802fe0c6">pinSetValue</a></div><div class="ttdeci">void pinSetValue(unsigned char port, unsigned char pin, unsigned char value)</div><div class="ttdef"><b>Definition:</b> morse.c:31</div></div>
+<div class="ttc" id="amorse_8h_html_a427ce3660862f0a5a3096a3923e4765e"><div class="ttname"><a href="morse_8h.html#a427ce3660862f0a5a3096a3923e4765e">glavni</a></div><div class="ttdeci">void glavni(unsigned char port, unsigned char pin, char unos[])</div><div class="ttdef"><b>Definition:</b> morse.c:127</div></div>
+<div class="ttc" id="amorse_8h_html_ab022985d803fa4c169762cb970a1a7db"><div class="ttname"><a href="morse_8h.html#ab022985d803fa4c169762cb970a1a7db">letter_num</a></div><div class="ttdeci">int8_t letter_num(char x)</div><div class="ttdef"><b>Definition:</b> morse.c:91</div></div>
+<div class="ttc" id="amorse_8h_html_a28e86b1559044e74b215e4bf8f422784"><div class="ttname"><a href="morse_8h.html#a28e86b1559044e74b215e4bf8f422784">pulsing</a></div><div class="ttdeci">void pulsing(unsigned char port, unsigned char pin, unsigned char value, int8_t repetition)</div><div class="ttdef"><b>Definition:</b> morse.c:193</div></div>
+<div class="ttc" id="amorse_8h_html_a9eed16bff2246d94ff82e13febdcca14"><div class="ttname"><a href="morse_8h.html#a9eed16bff2246d94ff82e13febdcca14">blink</a></div><div class="ttdeci">void blink(unsigned char port, unsigned char pin, int8_t value)</div><div class="ttdef"><b>Definition:</b> morse.c:179</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
