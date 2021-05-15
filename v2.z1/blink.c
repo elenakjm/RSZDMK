@@ -1,6 +1,7 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include "../timer0_driver/timer0.h"
+#include<util/delay.h>
 
 int main()
 {
@@ -17,10 +18,5 @@ void branch_a()
 		PORTB &= ~(1 << 5); //LED OFF
 		_delay_ms(500); //pauza 1s
 	}
-}
-
-void branch_b()
-{
-
 }
 

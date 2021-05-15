@@ -39,8 +39,8 @@ int main()
 		while(!usartAvailable());
 		_delay_ms(100);
 
-		usartGetString(unos);
-		sscanf(unos, "%d", &broj);
+		broj = usartParseInt();
+		//sscanf(unos, "%d", &broj);
 		sprintf(pom, "Konvertovano: %d\r\n", broj);
 		usartPutString(pom);
 
