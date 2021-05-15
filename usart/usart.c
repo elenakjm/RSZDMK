@@ -102,3 +102,43 @@ uint8_t usartGetString(int8_t *s)
 	s[len] = 0;						// Terminacija stringa
 	return len;						// Vraca broj ocitanih karaktera
 }
+
+int8_t usartPeek() // Slicna kao usartGetChar()
+{
+	int8_t c;
+
+	if (!Rx_Buffer_Size)						// Bafer je prazan?
+		return -1;
+	c = Rx_Buffer[Rx_Buffer_First];
+
+	return c;
+}
+
+int16_t usartParseInt()
+{
+	int8_t c;
+	uint16_t res = 0; // Promenljiva koja sluzi za akumulaciju brojeva koji stizu
+	int8_t sign = 1; // Znak nadolazecih cifara (da li su brojevi pozitivni ili negativni)
+
+	// Odstranimo sve karaktere koji nisu cifra ili znak minus
+	while((usartPeek() < '0' && usartPeek() != '-') || usartPeek() > '9') // Dokle god prvi karakter nije u intervalu [0, 9] i dokle god nije negativan broj
+	{
+		c = usartGetChar(); //uklanjamo karakter ako on nije broj
+	}
+
+	// Izdvajanje cifara i dobijanje celog broja
+	while((usartPeek() >= '0' && usartPeek() <= '9') || usartPeek() == '-')
+	{
+		c = usartGetChar();
+		if(c == '-')
+		{
+			sign = -1;
+		}
+		else
+		{
+			res =res * 10 + (c - '0');
+		}
+	}
+
+	return res * sign;
+}

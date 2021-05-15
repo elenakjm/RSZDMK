@@ -99,6 +99,10 @@ Functions</h2></td></tr>
 <tr class="separator:a69568a196a9ba0868437ffd94670ff65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fbdc0142ee50b24d45eb72ed1fa3976"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usart_8h.html#a2fbdc0142ee50b24d45eb72ed1fa3976">usartGetString</a> (int8_t *s)</td></tr>
 <tr class="separator:a2fbdc0142ee50b24d45eb72ed1fa3976"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c4bea87a95de41889d9f7b69eccec75"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usart_8h.html#a5c4bea87a95de41889d9f7b69eccec75">usartPeek</a> ()</td></tr>
+<tr class="separator:a5c4bea87a95de41889d9f7b69eccec75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9c4e820f765df6315ae3e988b0a46f8"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usart_8h.html#ad9c4e820f765df6315ae3e988b0a46f8">usartParseInt</a> ()</td></tr>
+<tr class="separator:ad9c4e820f765df6315ae3e988b0a46f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Funkcije za upravljanje serijskim portom. </p>
@@ -187,6 +191,42 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ad9c4e820f765df6315ae3e988b0a46f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9c4e820f765df6315ae3e988b0a46f8">&#9670;&nbsp;</a></span>usartParseInt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t usartParseInt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Funkcija koja u nizu karaktera vraca ceo broj. </p><dl class="section return"><dt>Returns</dt><dd>validan ceo broj u nadolazecem nizu karaktera </dd></dl>
+
+</div>
+</div>
+<a id="a5c4bea87a95de41889d9f7b69eccec75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c4bea87a95de41889d9f7b69eccec75">&#9670;&nbsp;</a></span>usartPeek()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t usartPeek </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Funkcija koja u nadolazecem nizu karaktera vidi koji je prvi karakter tog niza, bez da sakati ostatak stringa. </p><dl class="section return"><dt>Returns</dt><dd>prvi karakter stringa </dd></dl>
 
 </div>
 </div>

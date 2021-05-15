@@ -1,5 +1,5 @@
 /*
- * timer0.c
+ * @file timer0.c
  *
  *  Created on: 29.03.2021.
  *      Author: elena
@@ -10,6 +10,7 @@
 /// Promenljiva koja skladisti broj milisekundi proteklih od pokretanja aplikacije
 volatile unsigned long ms = 0;
 
+
 unsigned long timer0DelayMs(unsigned long delay_length)
 {
 	unsigned long t0; // Trenutak pocevsi od kog se racuna pauza
@@ -19,6 +20,8 @@ unsigned long timer0DelayMs(unsigned long delay_length)
 		; // Pauza delay_length milisekundi
 	return ms;
 }
+/*********************************************************************************************/
+
 /******************************************************************************************/
 void timer0InteruptInit()
 {

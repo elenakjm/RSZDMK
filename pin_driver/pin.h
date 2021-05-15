@@ -1,6 +1,6 @@
 /*
- * pin.h
- *
+ * @name pin.h
+ * @brief Funkcije za upravljanje portovima
  *  Created on: 29.03.2021.
  *      Author: elena
  */
@@ -26,6 +26,13 @@
 /// Makro za selektovanje pina na koji je povezana dioda
 #define DIODE_PIN 5
 
+/**
+ * Funkcija koja setuje vrednost pina
+ * @param port - Port koji selektujemo
+ * @param pin - Pin na koji saljemo vrednost
+ * @param value - Vrednost koji saljemo
+ * @return Nema povratnu vrednost
+ */
 void pinSetValue(unsigned char port, unsigned char pin, unsigned char value);
 void pinInit(unsigned char port, unsigned char pin, unsigned char direction);
 
