@@ -12,34 +12,39 @@
 #include<util/delay.h>
 
 
-int8_t prost(int8_t num)
+void removeNum(int8_t pozicija, int8_t duz, int8_t nums[])
 {
-	for(int8_t i = 2; i < num; i++)
+	for(int8_t i = pozicija; i < duz; i++)
 	{
-		if(num % i == 0)
-			return 0;
+		nums[i] = nums[i+1];
 	}
-	return 1;
 }
 
-void nums(int8_t num)
+int8_t proveri(int8_t num, int8_t nums[])
 {
-	int8_t i;
-	char pom[15];
-
-	sprintf(pom, "Prosti brojevi do %d su: ", num);
-	usartPutString(pom);
-
-	for(i = 2; i <= num; i++)
+	int8_t i, j;
+	for(i = 0; i <= (num - 2); i++)
 	{
-		if(prost(i))
+		for(j = i + 1; j <= (num - 2); j++)
 		{
-			sprintf(pom, "Broj %d\r\n", i);
-			usartPutString(pom);
+			if(nums[j] % i == 0)
+			{
+				removeNum(j, num, nums);
+				num--;
+			}
 		}
 	}
+	return num;
 }
 
+void unesi(int8_t num, int8_t nums[])
+{
+	int8_t i;
+	for(i = 2; i <= num; i++)
+	{
+		nums[i-2] = i;
+	}
+}
 
 
 int main()
@@ -47,6 +52,8 @@ int main()
 	usartInit(9600);
 	int8_t br = 0;
 	timer0InteruptInit();
+	int8_t nova_duz = 0;
+	char pom[20];
 
 	while (1)
 	{
@@ -56,7 +63,16 @@ int main()
 
 		br = usartParseInt();
 
-		nums(br);
+		int8_t brojevi[br];
+		unesi(br, brojevi);
+		nova_duz = proveri(br, brojevi);
+
+		usartPutString_P(PSTR("Prosti su: \r\n"));
+		for(int8_t i = 0; i < nova_duz; i++)
+		{
+			sprintf(pom, "%d ", brojevi[i]);
+			usartPutString(pom);
+		}
 
 	}
 
