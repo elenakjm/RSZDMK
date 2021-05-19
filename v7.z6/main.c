@@ -23,9 +23,9 @@ void removeNum(int8_t pozicija, int8_t duz, int8_t nums[])
 int8_t proveri(int8_t num, int8_t nums[])
 {
 	int8_t i, j;
-	for(i = 0; i <= (num - 2); i++)
+	for(i = 0; i <= (num - 1); i++)
 	{
-		for(j = i + 1; j <= (num - 2); j++)
+		for(j = i + 1; j <= (num - 1); j++)
 		{
 			if(nums[j] % i == 0)
 			{
