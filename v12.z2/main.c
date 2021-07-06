@@ -130,6 +130,9 @@ int main()
 		case PRINT:
 			while(i<d)
 			{
+				PLS7writeDisplay(1, 0xff);
+				PLS7writeDisplay(2, 0xff);
+				PLS7writeDisplay(3, 0xff);
 				pom=niz[i];
 				PLS7writeDisplay(4, cifre[pom%10]);
 
