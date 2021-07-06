@@ -13,7 +13,7 @@ int main()
 {
 	pinInit(PORT_B, 5, OUTPUT);
 	timer0InteruptInit();
-	usartInit(115200);
+	usartInit(9600);
 
 	int8_t c;
 	int8_t key[] = "123"; //potrebna je duzina od 4 zbog null karaktera
@@ -34,9 +34,9 @@ int main()
 			{
 				for(int i = 0; i < 2; i++)
 				{
-					timer0DelayMs(1000);
+					timer0DelayMs(3000);
 					pinSetValue(PORT_B, 5, HIGH);
-					timer0DelayMs(1000);
+					timer0DelayMs(3000);
 					pinSetValue(PORT_B, 5, LOW);
 				}
 				//akcija otkljucavanja...
