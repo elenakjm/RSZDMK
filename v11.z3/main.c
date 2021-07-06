@@ -28,8 +28,6 @@ int main()
 	while(1)
 	{
 
-		if(PLS7buttonState(LEFT))
-		{
 			uint8_t p1, p2, p3=0;
 			uint8_t s=0;
 
@@ -73,7 +71,6 @@ int main()
 
 			//brojevi nikad nece ici do 1000+ pa nam prvi disp ne treba
 
-		}
 	}
 
 	return 0;
