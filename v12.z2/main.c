@@ -9,7 +9,7 @@
 #include "timer0.h"
 #include<math.h>
 #include "../PLS7shield/PLS7shield.h"
-#include "../usart/usart.h"
+//#include "../usart/usart.h"
 #include<avr/io.h>
 #include<avr/pgmspace.h>
 #include <stdlib.h> //za int8_t
@@ -44,7 +44,7 @@ uint8_t izracunaj()
 
 int main()
 {
-	usartInit(9600);
+	//usartInit(9600);
 	PLS7init();
 	PLS7writeDisplay(LEDS, 0xff);
 
@@ -53,7 +53,7 @@ int main()
 	state_t state = LENGTH_INIT;
 	uint8_t d;
 	uint8_t niz[256];
-	char ispis[50];
+	//char ispis[50];
 	uint8_t s;
 	uint8_t i;
 	uint8_t j;
@@ -69,24 +69,24 @@ int main()
 			while(!PLS7buttonState(LEFT)); //ceka levi taster
 
 			d=izracunaj();
-			sprintf(ispis, "Duzina: %d", d);
-			usartPutString(ispis);
+			//sprintf(ispis, "Duzina: %d", d);
+			//usartPutString(ispis);
 
 			i=0;
 			state=ELEMENTS;
 		break;
 
 		case ELEMENTS:
-			usartPutString("Elementi: ");
+			//usartPutString("Elementi: ");
 			for(i=0; i<d; i++)
 			{
 				while(!PLS7buttonState(RIGHT));
 				s=0;
 				s=izracunaj();
 				niz[i]=s;
-				sprintf(ispis, "%d", s);
-				usartPutString(ispis);
-				usartPutString("\r\n");
+				//sprintf(ispis, "%d", s);
+				//usartPutString(ispis);
+				//usartPutString("\r\n");
 				timer0DelayMs(1000); //sprecava dzampere
 			}
 
